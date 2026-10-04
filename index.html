@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M-dInt Tools</title>
+<meta name="description" content="La boîte à outils de médecine interne : outils web gratuits, 100 % dans le navigateur.">
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --text: #1b1f24; --muted: #5b6573;
+    --border: #e3e6ea; --accent: #2457c5; --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #111418; --card: #1a1f25; --text: #e8ebef; --muted: #9aa4b1;
+      --border: #2a313a; --accent: #7aa5ff; --shadow: none; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 1040px; margin: 0 auto; padding: 56px 16px 32px; }
+  header { margin-bottom: 40px; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin: 0 0 8px; letter-spacing: -.02em; }
+  header p { margin: 0; color: var(--muted); font-size: 1.1rem; max-width: 60ch; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .tile { display: flex; flex-direction: column; gap: 10px; padding: 22px; text-decoration: none;
+    color: inherit; background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    box-shadow: var(--shadow); transition: transform .15s, border-color .15s; }
+  .tile:hover, .tile:focus-visible { transform: translateY(-2px); border-color: var(--accent); outline: none; }
+  .icon { font-size: 1.8rem; line-height: 1; }
+  .tile h2 { margin: 0; font-size: 1.15rem; }
+  .tile p { margin: 0; color: var(--muted); font-size: .95rem; flex: 1; }
+  .go { color: var(--accent); font-weight: 600; font-size: .9rem; }
+  footer { margin-top: 48px; text-align: center; color: var(--muted); font-size: .8rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>M-dInt Tools</h1>
+    <p>La boîte à outils de médecine interne : des outils simples et gratuits pour le quotidien,
+      qui fonctionnent directement dans le navigateur.</p>
+  </header>
+
+  <div class="grid">
+    <a class="tile" href="https://ssc-ux.github.io/CorticoPlan/">
+      <span class="icon" aria-hidden="true">💊</span>
+      <h2>CorticoPlan</h2>
+      <p>Schéma de décroissance de prednisone : tableau daté, texte d'ordonnance à copier, calendrier patient à imprimer.</p>
+      <span class="go">Ouvrir →</span>
+    </a>
+    <a class="tile" href="https://ssc-ux.github.io/FastCurve/">
+      <span class="icon" aria-hidden="true">📈</span>
+      <h2>FastCurve</h2>
+      <p>Courbes de suivi biologique et EFR avec traitements, prêtes à coller dans un compte-rendu.</p>
+      <span class="go">Ouvrir →</span>
+    </a>
+    <a class="tile" href="https://ssc-ux.github.io/PNDStheque/">
+      <span class="icon" aria-hidden="true">📚</span>
+      <h2>PNDSthèque</h2>
+      <p>Répertoire des PNDS (HAS) en médecine interne, avec accès direct aux PDF.</p>
+      <span class="go">Ouvrir →</span>
+    </a>
+    <a class="tile" href="https://ssc-ux.github.io/detect_score/">
+      <span class="icon" aria-hidden="true">🫁</span>
+      <h2>Calculateur DETECT</h2>
+      <p>Dépistage de l'HTAP dans la sclérodermie, fidèle au nomogramme princeps, en deux étapes.</p>
+      <span class="go">Ouvrir →</span>
+    </a>
+    <a class="tile" href="https://ssc-ux.github.io/ThisWeek/">
+      <span class="icon" aria-hidden="true">📰</span>
+      <h2>ThisWeek</h2>
+      <p>La veille hebdomadaire de l'interniste : nouvelles recommandations, PNDS et articles importants.</p>
+      <span class="go">Ouvrir →</span>
+    </a>
+  </div>
+
+  <footer>Créé par Quentin Astouati · Aides à la pratique, ne remplacent pas le jugement médical.</footer>
+</main>
+</body>
+</html>
