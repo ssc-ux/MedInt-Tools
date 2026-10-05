@@ -83,7 +83,7 @@
     <button class="tile" type="button" onclick="document.getElementById('agenda').showModal()">
       <span class="icon" aria-hidden="true">📅</span>
       <h2>Agenda automatique</h2>
-      <p>Un agenda auquel on s'abonne une seule fois : les événements apparaissent et se mettent à jour tout seuls dans le calendrier du téléphone.</p>
+      <p>Formations MI du jeudi, webinaires, journées, soirées et congrès annoncés par mail au DES de médecine interne de Lille, ajoutés automatiquement à votre calendrier.</p>
       <span class="go">Comment l'installer →</span>
     </button>
   </div>
@@ -92,8 +92,12 @@
     <div class="dlg">
       <button class="close" type="button" aria-label="Fermer" onclick="this.closest('dialog').close()">×</button>
       <h2 id="agenda-titre">📅 Agenda automatique</h2>
+      <p>Les événements annoncés par mail aux internes du DES de médecine interne de Lille (formation MI du jeudi 13 h,
+        webconférences, journées, soirées, congrès) sont lus automatiquement et ajoutés à un agenda partagé, avec lien de connexion
+        et résumé. Rappels, changements d'horaire et annulations sont mis à jour tout seuls.</p>
       <p class="note"><strong>Le lien n'est pas public.</strong> Pour l'obtenir, adressez-vous directement à Quentin Astouati.
-        Une fois le lien reçu, suivez les étapes ci-dessous (5 minutes, à faire une seule fois).</p>
+        Une fois le lien reçu, suivez les étapes ci-dessous (5 minutes, à faire une seule fois).
+        <br>⚠️ Ce lien est personnel au groupe : merci de ne pas le transférer.</p>
 
       <h3>📱 Sur iPhone</h3>
       <ol>
@@ -110,8 +114,6 @@
         <li><em>Conseil :</em> pour des mises à jour plus fréquentes, allez dans Réglages → Apps → Calendrier → Comptes de calendrier →
           <strong>Récupérer les données</strong> et choisissez <strong>Toutes les heures</strong> (ou « Toutes les 15 minutes »).</li>
       </ol>
-      <p><small>Raccourci possible : si le lien commence par <code>webcal://</code>, il suffit souvent de le toucher dans Safari, Mail ou Messages,
-        puis de confirmer « S'abonner ».</small></p>
 
       <h3>🤖 Sur Android (Google Agenda)</h3>
       <p>L'application Google Agenda ne permet pas d'ajouter un lien directement : l'abonnement se fait une fois depuis le site, puis il apparaît tout seul sur le téléphone.</p>
@@ -122,13 +124,32 @@
           <br><small>Plus simple : faites cette étape depuis un ordinateur.</small></li>
         <li>Dans la colonne de gauche, à côté de <strong>Autres agendas</strong>, cliquez sur <strong>+</strong>, puis <strong>À partir de l'URL</strong>.</li>
         <li><strong>Collez le lien</strong> dans « URL de l'agenda », puis cliquez sur <strong>Ajouter un agenda</strong>.
-          <br><small>Si le lien commence par <code>webcal://</code>, remplacez ce début par <code>https://</code>.</small></li>
+</li>
         <li>Sur le téléphone, ouvrez l'application <strong>Google Agenda</strong> → menu <strong>☰</strong> en haut à gauche → <strong>Paramètres</strong>.</li>
         <li>Touchez le nom du nouvel agenda (sous votre compte ; touchez « Afficher plus » s'il n'apparaît pas) et activez <strong>Synchroniser</strong>.</li>
         <li>De retour dans l'agenda, menu <strong>☰</strong> : vérifiez que la case du nouvel agenda est <strong>cochée</strong>. Les événements apparaissent.</li>
       </ol>
       <p><small>Bon à savoir : Google met à jour les agendas abonnés automatiquement, mais avec un délai (de quelques heures jusqu'à une journée).
         Sur un Samsung, l'agenda ajouté apparaît aussi dans <strong>Samsung Calendrier</strong> si le compte Google y est synchronisé.</small></p>
+
+      <h3>🔁 Android, autre méthode : application ICSx⁵</h3>
+      <p>Utile sans compte Google, ou pour des mises à jour plus rapides.</p>
+      <ol>
+        <li>Installez <strong>ICSx⁵</strong> depuis le Play Store (ou F-Droid, gratuit).</li>
+        <li>Ouvrez-la, touchez <strong>+</strong> et <strong>collez le lien</strong> dans « URL », puis <strong>Suivant</strong>.</li>
+        <li>Donnez un nom et une couleur à l'agenda, touchez <strong>Ajouter</strong> et acceptez l'accès au calendrier.</li>
+        <li>Dans ⋮ → <strong>Paramètres</strong>, choisissez l'intervalle de synchronisation (par ex. toutes les heures).</li>
+        <li>L'agenda apparaît dans votre application de calendrier habituelle (Google Agenda, Samsung…).</li>
+      </ol>
+
+      <h3>💻 Sur ordinateur (Outlook)</h3>
+      <ol>
+        <li>Dans Outlook, ouvrez le <strong>Calendrier</strong> → <strong>Ajouter un calendrier</strong> → <strong>À partir d'Internet</strong>.</li>
+        <li>Collez le lien, donnez un nom et validez.</li>
+      </ol>
+
+      <p class="note">Les événements sont extraits automatiquement des mails : une erreur reste possible, <strong>le mail d'origine fait foi</strong>.
+        La mise à jour d'un abonnement prend de quelques heures à environ 24 h selon l'application.</p>
 
       <p class="note">Pour vous désabonner : iPhone → Réglages → Apps → Calendrier → Comptes de calendrier → l'abonnement → Supprimer le compte.
         Android → calendar.google.com → survolez l'agenda → ⋮ → Se désabonner.</p>
