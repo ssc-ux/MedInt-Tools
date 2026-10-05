@@ -26,6 +26,18 @@
   .tile h2 { margin: 0; font-size: 1.15rem; }
   .tile p { margin: 0; color: var(--muted); font-size: .95rem; flex: 1; }
   .go { color: var(--accent); font-weight: 600; font-size: .9rem; }
+  button.tile { font: inherit; text-align: left; cursor: pointer; width: 100%; }
+  dialog { width: min(680px, calc(100% - 32px)); max-height: calc(100% - 32px); padding: 0; border: 1px solid var(--border);
+    border-radius: 14px; color: var(--text); background: var(--card); box-shadow: 0 10px 40px rgba(0,0,0,.2); }
+  dialog::backdrop { background: rgba(15,20,30,.45); }
+  .dlg { padding: 24px 22px; }
+  .dlg h2 { margin: 0 0 6px; font-size: 1.3rem; }
+  .dlg h3 { margin: 22px 0 8px; font-size: 1.05rem; }
+  .dlg p, .dlg li { font-size: .95rem; }
+  .dlg ol { padding-left: 22px; margin: 0; }
+  .dlg li { margin-bottom: 6px; }
+  .note { background: #eef3fd; border-radius: 10px; padding: 12px 14px; margin: 14px 0 0; }
+  .close { float: right; border: 0; background: none; font-size: 1.5rem; line-height: 1; cursor: pointer; color: var(--muted); }
   footer { margin-top: 48px; text-align: center; color: var(--muted); font-size: .8rem; }
 </style>
 </head>
@@ -68,7 +80,60 @@
       <p>La veille hebdomadaire de l'interniste : nouvelles recommandations, PNDS et articles importants.</p>
       <span class="go">Ouvrir →</span>
     </a>
+    <button class="tile" type="button" onclick="document.getElementById('agenda').showModal()">
+      <span class="icon" aria-hidden="true">📅</span>
+      <h2>Agenda automatique</h2>
+      <p>Un agenda auquel on s'abonne une seule fois : les événements apparaissent et se mettent à jour tout seuls dans le calendrier du téléphone.</p>
+      <span class="go">Comment l'installer →</span>
+    </button>
   </div>
+
+  <dialog id="agenda" aria-labelledby="agenda-titre" onclick="if(event.target===this)this.close()">
+    <div class="dlg">
+      <button class="close" type="button" aria-label="Fermer" onclick="this.closest('dialog').close()">×</button>
+      <h2 id="agenda-titre">📅 Agenda automatique</h2>
+      <p class="note"><strong>Le lien n'est pas public.</strong> Pour l'obtenir, adressez-vous directement à Quentin Astouati.
+        Une fois le lien reçu, suivez les étapes ci-dessous (5 minutes, à faire une seule fois).</p>
+
+      <h3>📱 Sur iPhone</h3>
+      <ol>
+        <li><strong>Copiez le lien</strong> reçu : appui long sur le lien, puis « Copier ».</li>
+        <li>Ouvrez l'application <strong>Réglages</strong> (roue crantée grise).</li>
+        <li>Descendez et touchez <strong>Apps</strong>, puis <strong>Calendrier</strong>.
+          <br><small>Sur iOS 17 ou plus ancien : touchez directement <strong>Calendrier</strong>.</small></li>
+        <li>Touchez <strong>Comptes de calendrier</strong> (ou <strong>Comptes</strong>), puis <strong>Ajouter un compte</strong>.</li>
+        <li>Choisissez <strong>Autre</strong> (tout en bas), puis <strong>Ajouter un calendrier avec abonnement</strong>.</li>
+        <li>Dans le champ « Serveur », <strong>collez le lien</strong> (appui long → « Coller »), puis touchez <strong>Suivant</strong>.</li>
+        <li>Laissez les réglages proposés et touchez <strong>Enregistrer</strong>.</li>
+        <li>Ouvrez l'application <strong>Calendrier</strong> : les événements apparaissent en quelques instants.
+          Touchez <strong>Calendriers</strong> en bas de l'écran pour l'afficher ou le masquer.</li>
+        <li><em>Conseil :</em> pour des mises à jour plus fréquentes, allez dans Réglages → Apps → Calendrier → Comptes de calendrier →
+          <strong>Récupérer les données</strong> et choisissez <strong>Toutes les heures</strong> (ou « Toutes les 15 minutes »).</li>
+      </ol>
+      <p><small>Raccourci possible : si le lien commence par <code>webcal://</code>, il suffit souvent de le toucher dans Safari, Mail ou Messages,
+        puis de confirmer « S'abonner ».</small></p>
+
+      <h3>🤖 Sur Android (Google Agenda)</h3>
+      <p>L'application Google Agenda ne permet pas d'ajouter un lien directement : l'abonnement se fait une fois depuis le site, puis il apparaît tout seul sur le téléphone.</p>
+      <ol>
+        <li><strong>Copiez le lien</strong> reçu : appui long sur le lien, puis « Copier ».</li>
+        <li>Ouvrez <strong>Chrome</strong> et allez sur <strong>calendar.google.com</strong>, connecté avec le <strong>même compte Google</strong> que votre téléphone.</li>
+        <li>Si la version mobile s'affiche : menu <strong>⋮</strong> en haut à droite → cochez <strong>Version pour ordinateur</strong>.
+          <br><small>Plus simple : faites cette étape depuis un ordinateur.</small></li>
+        <li>Dans la colonne de gauche, à côté de <strong>Autres agendas</strong>, cliquez sur <strong>+</strong>, puis <strong>À partir de l'URL</strong>.</li>
+        <li><strong>Collez le lien</strong> dans « URL de l'agenda », puis cliquez sur <strong>Ajouter un agenda</strong>.
+          <br><small>Si le lien commence par <code>webcal://</code>, remplacez ce début par <code>https://</code>.</small></li>
+        <li>Sur le téléphone, ouvrez l'application <strong>Google Agenda</strong> → menu <strong>☰</strong> en haut à gauche → <strong>Paramètres</strong>.</li>
+        <li>Touchez le nom du nouvel agenda (sous votre compte ; touchez « Afficher plus » s'il n'apparaît pas) et activez <strong>Synchroniser</strong>.</li>
+        <li>De retour dans l'agenda, menu <strong>☰</strong> : vérifiez que la case du nouvel agenda est <strong>cochée</strong>. Les événements apparaissent.</li>
+      </ol>
+      <p><small>Bon à savoir : Google met à jour les agendas abonnés automatiquement, mais avec un délai (de quelques heures jusqu'à une journée).
+        Sur un Samsung, l'agenda ajouté apparaît aussi dans <strong>Samsung Calendrier</strong> si le compte Google y est synchronisé.</small></p>
+
+      <p class="note">Pour vous désabonner : iPhone → Réglages → Apps → Calendrier → Comptes de calendrier → l'abonnement → Supprimer le compte.
+        Android → calendar.google.com → survolez l'agenda → ⋮ → Se désabonner.</p>
+    </div>
+  </dialog>
 
   <footer>Créé par Quentin Astouati · Aides à la pratique, ne remplacent pas le jugement médical.</footer>
 </main>
