@@ -44,11 +44,10 @@
   header { text-align: center; margin-bottom: 32px; }
   h1 { font: 700 clamp(2.4rem, 9vw, 3.6rem)/1.1 "Plus Jakarta Sans", system-ui, sans-serif; margin: 0 0 12px; letter-spacing: -.03em; }
   .grad { background: linear-gradient(90deg, #1f5fbf, #17794a); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .pour { margin: 0 0 14px; font-size: clamp(1.05rem, 3.5vw, 1.35rem); font-weight: 600; }
-  .defile { display: block; height: 1.3em; line-height: 1.3; overflow: hidden; }
+  .pour { margin: 0 0 14px; line-height: 1.3; color: var(--text); font-size: clamp(1.05rem, 3.5vw, 1.35rem); font-weight: 600; }
+  .defile { display: inline-block; vertical-align: top; text-align: left; height: 1.3em; overflow: hidden; }
   .defile span { display: block; animation: defile 18s infinite; }
   .defile b { display: block; height: 1.3em; white-space: nowrap; font-weight: 600; background: linear-gradient(90deg, #1f5fbf, #17794a); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .defile i { font-style: normal; color: var(--text); }
   @keyframes defile { 0.0%,13.5% { transform: translateY(-0.0em); } 16.7%,30.2% { transform: translateY(-1.3em); } 33.3%,46.8% { transform: translateY(-2.6em); } 50.0%,63.5% { transform: translateY(-3.9em); } 66.7%,80.2% { transform: translateY(-5.2em); } 83.3%,96.8% { transform: translateY(-6.5em); } 100% { transform: translateY(-7.8em); } }
   header p { margin: 0 auto; color: var(--muted); font-size: 1.05rem; max-width: 60ch; }
   .carrousel { overflow: hidden; margin: 0 -16px 8px; padding: 8px 0 16px;
@@ -57,7 +56,6 @@
   .carrousel:hover .rail, .carrousel:focus-within .rail { animation-play-state: paused; }
   .rail .tile { width: 280px; }
   @keyframes rail { to { transform: translateX(calc(-50% - 8px)); } }
-  h2.section { margin: 32px 0 14px; font-size: .85rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
   @media (prefers-reduced-motion: reduce) { .defile span, .rail { animation: none; } }
 </style>
 </head>
@@ -65,15 +63,13 @@
 <main>
   <header>
     <h1 class="grad">MedInt Tools</h1>
-    <p class="pour"><span class="defile"><span><b><i>pour</i> prescrire une corticothérapie</b><b><i>pour</i> tracer des courbes de suivi</b><b><i>pour</i> retrouver un PNDS en un clic</b><b><i>pour</i> dépister l'HTAP</b><b><i>pour</i> suivre la veille de la semaine</b><b><i>pour</i> ne rater aucune formation</b><b><i>pour</i> prescrire une corticothérapie</b></span></span></p>
+    <p class="pour">pour <span class="defile"><span><b>prescrire une corticothérapie</b><b>tracer des courbes de suivi</b><b>retrouver un PNDS en un clic</b><b>dépister l'HTAP</b><b>suivre la veille de la semaine</b><b>ne rater aucune formation</b><b>prescrire une corticothérapie</b></span></span></p>
     <p>La boîte à outils de médecine interne : des outils simples et gratuits pour le quotidien,
       qui fonctionnent directement dans le navigateur.</p>
   </header>
 
-  <div class="carrousel" aria-hidden="true"><div class="rail"></div></div>
-  <h2 class="section">Tous les outils</h2>
-
-  <div class="grid">
+  <div class="carrousel">
+  <div class="rail">
     <a class="tile" href="https://ssc-ux.github.io/CorticoPlan/">
       <span class="icon" aria-hidden="true">💊</span>
       <h2>CorticoPlan</h2>
@@ -110,6 +106,7 @@
       <p>Les formations et événements du DES de MI de Lille, ajoutés automatiquement à votre calendrier.</p>
       <span class="go">Comment l'installer →</span>
     </button>
+  </div>
   </div>
 
   <dialog id="agenda" aria-labelledby="agenda-titre" onclick="if(event.target===this)this.close()">
@@ -184,8 +181,8 @@
 </main>
 <script>
   const rail = document.querySelector('.rail');
-  for (let k = 0; k < 2; k++) for (const t of document.querySelectorAll('.grid .tile')) {
-    const c = t.cloneNode(true); c.tabIndex = -1; rail.append(c);
+  for (const t of [...rail.children]) {
+    const c = t.cloneNode(true); c.tabIndex = -1; c.setAttribute('aria-hidden', 'true'); rail.append(c);
   }
 </script>
 </body>
