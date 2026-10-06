@@ -50,13 +50,7 @@
   .defile b { display: block; height: 1.3em; white-space: nowrap; font-weight: 600; background: linear-gradient(90deg, #1f5fbf, #17794a); -webkit-background-clip: text; background-clip: text; color: transparent; }
   @keyframes defile { 0.0%,13.5% { transform: translateY(-0.0em); } 16.7%,30.2% { transform: translateY(-1.3em); } 33.3%,46.8% { transform: translateY(-2.6em); } 50.0%,63.5% { transform: translateY(-3.9em); } 66.7%,80.2% { transform: translateY(-5.2em); } 83.3%,96.8% { transform: translateY(-6.5em); } 100% { transform: translateY(-7.8em); } }
   header p { margin: 0 auto; color: var(--muted); font-size: 1.05rem; max-width: 60ch; }
-  .carrousel { overflow: hidden; margin: 0 -16px 8px; padding: 8px 0 16px;
-    -webkit-mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-  .rail { display: flex; gap: 16px; width: max-content; animation: rail 45s linear infinite; }
-  .carrousel:hover .rail, .carrousel:focus-within .rail { animation-play-state: paused; }
-  .rail .tile { width: 280px; }
-  @keyframes rail { to { transform: translateX(calc(-50% - 8px)); } }
-  @media (prefers-reduced-motion: reduce) { .defile span, .rail { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .defile span { animation: none; } }
 </style>
 </head>
 <body>
@@ -68,8 +62,7 @@
       qui fonctionnent directement dans le navigateur.</p>
   </header>
 
-  <div class="carrousel">
-  <div class="rail">
+  <div class="grid">
     <a class="tile" href="https://ssc-ux.github.io/CorticoPlan/">
       <span class="icon" aria-hidden="true">💊</span>
       <h2>CorticoPlan</h2>
@@ -106,7 +99,6 @@
       <p>Les formations et événements du DES de MI de Lille, ajoutés automatiquement à votre calendrier.</p>
       <span class="go">Comment l'installer →</span>
     </button>
-  </div>
   </div>
 
   <dialog id="agenda" aria-labelledby="agenda-titre" onclick="if(event.target===this)this.close()">
@@ -179,11 +171,5 @@
 
   <footer>Créé par Quentin Astouati · Aides à la pratique, ne remplacent pas le jugement médical.</footer>
 </main>
-<script>
-  const rail = document.querySelector('.rail');
-  for (const t of [...rail.children]) {
-    const c = t.cloneNode(true); c.tabIndex = -1; c.setAttribute('aria-hidden', 'true'); rail.append(c);
-  }
-</script>
 </body>
 </html>
