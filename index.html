@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MedInt Tools</title>
 <meta name="description" content="La boîte à outils de médecine interne : outils web gratuits, 100 % dans le navigateur.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap">
 <style>
   :root {
     --bg: #f6f7f9; --card: #ffffff; --text: #1b1f24; --muted: #5b6573;
@@ -39,12 +41,23 @@
   .note { background: #eef3fd; border-radius: 10px; padding: 12px 14px; margin: 14px 0 0; }
   .close { float: right; border: 0; background: none; font-size: 1.5rem; line-height: 1; cursor: pointer; color: var(--muted); }
   footer { margin-top: 48px; text-align: center; color: var(--muted); font-size: .8rem; }
+  header { text-align: center; margin-bottom: 32px; }
+  h1 { font: 700 clamp(2.4rem, 9vw, 3.6rem)/1.1 "Plus Jakarta Sans", system-ui, sans-serif; margin: 0 0 12px; letter-spacing: -.03em; }
+  .grad { background: linear-gradient(90deg, #1f5fbf, #17794a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .pour { margin: 0 0 14px; line-height: 1.3; color: var(--text); font-size: clamp(1.05rem, 3.5vw, 1.35rem); font-weight: 600; }
+  .defile { display: inline-block; vertical-align: top; text-align: left; height: 1.3em; overflow: hidden; }
+  .defile span { display: block; animation: defile 18s infinite; }
+  .defile b { display: block; height: 1.3em; white-space: nowrap; font-weight: 600; background: linear-gradient(90deg, #1f5fbf, #17794a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  @keyframes defile { 0.0%,13.5% { transform: translateY(-0.0em); } 16.7%,30.2% { transform: translateY(-1.3em); } 33.3%,46.8% { transform: translateY(-2.6em); } 50.0%,63.5% { transform: translateY(-3.9em); } 66.7%,80.2% { transform: translateY(-5.2em); } 83.3%,96.8% { transform: translateY(-6.5em); } 100% { transform: translateY(-7.8em); } }
+  header p { margin: 0 auto; color: var(--muted); font-size: 1.05rem; max-width: 60ch; }
+  @media (prefers-reduced-motion: reduce) { .defile span { animation: none; } }
 </style>
 </head>
 <body>
 <main>
   <header>
-    <h1>MedInt Tools</h1>
+    <h1 class="grad">MedInt Tools</h1>
+    <p class="pour">pour <span class="defile"><span><b>prescrire une corticothérapie</b><b>tracer des courbes de suivi</b><b>retrouver un PNDS en un clic</b><b>dépister l'HTAP</b><b>suivre la veille de la semaine</b><b>ne rater aucune formation</b><b>prescrire une corticothérapie</b></span></span></p>
     <p>La boîte à outils de médecine interne : des outils simples et gratuits pour le quotidien,
       qui fonctionnent directement dans le navigateur.</p>
   </header>
