@@ -57,7 +57,7 @@
   @keyframes defile { 0.0%,8.7% { transform: translateY(-0.0em); } 11.1%,19.8% { transform: translateY(-1.3em); } 22.2%,30.9% { transform: translateY(-2.6em); } 33.3%,42.0% { transform: translateY(-3.9em); } 44.4%,53.2% { transform: translateY(-5.2em); } 55.6%,64.3% { transform: translateY(-6.5em); } 66.7%,75.4% { transform: translateY(-7.8em); } 77.8%,86.5% { transform: translateY(-9.1em); } 88.9%,97.6% { transform: translateY(-10.4em); } 100% { transform: translateY(-11.7em); } }
   header p { margin: 0 auto; color: var(--muted); font-size: 1.05rem; max-width: 60ch; }
   @media (prefers-reduced-motion: reduce) { .defile span { animation: none; } }
-  .demo { margin: 0 auto 40px; max-width: 880px; }
+  .demo { margin: 48px auto 0; max-width: 880px; }
   .demo video { display: block; width: 100%; aspect-ratio: 16/9; border-radius: 14px; border: 1px solid var(--border);
     box-shadow: var(--shadow); background: #eef1f5; }
 </style>
@@ -70,13 +70,6 @@
     <p>La boîte à outils de médecine interne : des outils simples et gratuits pour le quotidien,
       qui fonctionnent directement dans le navigateur.</p>
   </header>
-
-  <section class="demo" aria-label="Vidéo de présentation">
-    <video controls playsinline preload="metadata" poster="media/demo-poster.jpg">
-      <source src="media/demo.mp4" type="video/mp4">
-      Votre navigateur ne peut pas lire cette vidéo : <a href="media/demo.mp4">la télécharger</a>.
-    </video>
-  </section>
 
   <div class="grid">
     <a class="tile" href="https://ssc-ux.github.io/CorticoPlan/">
@@ -128,6 +121,13 @@
       <span class="go">Comment l'installer →</span>
     </button>
   </div>
+
+  <section class="demo" aria-label="Vidéo de présentation">
+    <video controls playsinline preload="metadata" poster="media/demo-poster.jpg">
+      <source src="media/demo.mp4" type="video/mp4">
+      Votre navigateur ne peut pas lire cette vidéo : <a href="media/demo.mp4">la télécharger</a>.
+    </video>
+  </section>
 
   <dialog id="agenda" aria-labelledby="agenda-titre" onclick="if(event.target===this)this.close()">
     <div class="dlg">
