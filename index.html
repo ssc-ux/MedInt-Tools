@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MedInt Tools</title>
 <meta name="description" content="La boîte à outils de médecine interne : outils web gratuits, 100 % dans le navigateur.">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&display=swap">
 <style>
+  @font-face { font-family: "Plus Jakarta Sans"; font-style: normal; font-weight: 200 800; font-display: swap;
+    src: url(fonts/plus-jakarta-sans.woff2) format("woff2"); }
   :root {
     --bg: #f6f7f9; --card: #ffffff; --text: #1b1f24; --muted: #5b6573;
     --border: #e3e6ea; --accent: #2457c5; --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.05);
@@ -52,9 +52,9 @@
   .grad { background: linear-gradient(90deg, #1f5fbf, #17794a); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .pour { margin: 0 0 14px; line-height: 1.3; color: var(--text); font-size: clamp(1.05rem, 3.5vw, 1.35rem); font-weight: 600; }
   .defile { display: inline-block; vertical-align: top; text-align: left; height: 1.3em; overflow: hidden; }
-  .defile span { display: block; animation: defile 27s infinite; }
+  .defile span { display: block; animation: defile 24s infinite; }
   .defile b { display: block; height: 1.3em; white-space: nowrap; font-weight: 600; background: linear-gradient(90deg, #1f5fbf, #17794a); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  @keyframes defile { 0.0%,8.7% { transform: translateY(-0.0em); } 11.1%,19.8% { transform: translateY(-1.3em); } 22.2%,30.9% { transform: translateY(-2.6em); } 33.3%,42.0% { transform: translateY(-3.9em); } 44.4%,53.2% { transform: translateY(-5.2em); } 55.6%,64.3% { transform: translateY(-6.5em); } 66.7%,75.4% { transform: translateY(-7.8em); } 77.8%,86.5% { transform: translateY(-9.1em); } 88.9%,97.6% { transform: translateY(-10.4em); } 100% { transform: translateY(-11.7em); } }
+  @keyframes defile { 0.0%,9.8% { transform: translateY(-0.0em); } 12.5%,22.2% { transform: translateY(-1.3em); } 25.0%,34.8% { transform: translateY(-2.6em); } 37.5%,47.2% { transform: translateY(-3.9em); } 50.0%,59.8% { transform: translateY(-5.2em); } 62.5%,72.2% { transform: translateY(-6.5em); } 75.0%,84.8% { transform: translateY(-7.8em); } 87.5%,97.2% { transform: translateY(-9.1em); } 100% { transform: translateY(-10.4em); } }
   header p { margin: 0 auto; color: var(--muted); font-size: 1.05rem; max-width: 60ch; }
   @media (prefers-reduced-motion: reduce) { .defile span { animation: none; } }
   .demo { margin: 48px auto 0; max-width: 880px; }
@@ -66,7 +66,7 @@
 <main>
   <header>
     <h1 class="grad">MedInt Tools</h1>
-    <p class="pour">pour <span class="defile"><span><b>prescrire une corticothérapie</b><b>tracer des courbes de suivi</b><b>retrouver un PNDS en un clic</b><b>dépister l'HTAP</b><b>comprendre l'HTP</b><b>lire un scanner de PID</b><b>suivre la veille de la semaine</b><b>suivre les études en cours</b><b>ne rater aucune formation</b><b>prescrire une corticothérapie</b></span></span></p>
+    <p class="pour">pour <span class="defile"><span><b>prescrire une corticothérapie</b><b>tracer des courbes de suivi</b><b>retrouver un PNDS en un clic</b><b>dépister l'HTAP</b><b>comprendre l'HTP</b><b>suivre la veille de la semaine</b><b>suivre les études en cours</b><b>ne rater aucune formation</b><b>prescrire une corticothérapie</b></span></span></p>
     <p>La boîte à outils de médecine interne : des outils simples et gratuits pour le quotidien,
       qui fonctionnent directement dans le navigateur.</p>
   </header>
@@ -99,7 +99,7 @@
     <div class="tile off" aria-disabled="true">
       <span class="icon" aria-hidden="true">🫀</span>
       <h2>Comprendre l'HTP <span class="badge creation">En création</span></h2>
-      <p>Simulateur hémodynamique des 5 groupes d'hypertension pulmonaire, en 2D et 3D, avec quiz.</p>
+      <p>Simulateur hémodynamique des 5 groupes d'hypertension pulmonaire, en schéma animé, avec quiz.</p>
       <span class="go">Bientôt disponible</span>
     </div>
     <a class="tile" href="https://ssc-ux.github.io/ThisWeek/">
